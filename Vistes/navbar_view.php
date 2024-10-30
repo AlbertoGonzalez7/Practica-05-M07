@@ -38,11 +38,21 @@ if (isset($_SESSION['usuari'])) {
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       </ul>
 
-      <!-- Logout a la dreta -->
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="d-flex ms-auto" role="search">
-        <input type="hidden" name="logout" value="1">
-        <button class="btn btn-outline-success" type="submit">Logout</button>
-      </form>
+      <div class="btn-group">
+    <button class="btn btn-secondary btn-lg dropdown-toggle mx-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <?php echo htmlspecialchars($usuari); ?>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Modificar perfil</a></li>
+      <li><a class="dropdown-item" href="#">Canvi de contrasenya</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <input type="hidden" name="logout" value="1">
+      <li><button class="dropdown-item" type="submit">Logout</button></li>
+    </ul>
+  </div>
+<div class="btn-group">
+</form>
 
       <?php
       // Si se ha enviat el formulari de logout
@@ -60,6 +70,8 @@ if (isset($_SESSION['usuari'])) {
       ?>
     </div>
   </div>
+
+  
 </nav>
 
 </body>
