@@ -10,7 +10,7 @@ include "Login/missatge_logout.php";
 
 <head>
     <meta charset="utf-8" />
-    <title>Pràctica 4</title>
+    <title>Pràctica 5 - Social Authentication & Miscel·lània</title>
     <link rel="stylesheet" type="text/css" href="CSS/estils.css">
 </head>
 
@@ -23,7 +23,7 @@ include "Login/missatge_logout.php";
         </h2>
     </form>
 
-    <a href='Login/login.php'>
+    <a href='Vistes/login_nou.php'>
         <button class="login" role="button">Login/Sign up</button>
     </a>
 

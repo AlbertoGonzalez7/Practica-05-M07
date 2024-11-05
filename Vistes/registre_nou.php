@@ -1,8 +1,6 @@
 <?php
 # Alberto González Benítez, 2n DAW, Pràctica 04 - Inici d'usuaris i registre de sessions
 
-include '../Controlador/verificar_sessio.php';
-
 if (isset($_SESSION['usuari'])) {
     $usuari = $_SESSION['usuari'];
 } else {
@@ -31,43 +29,47 @@ if (isset($_SESSION['usuari'])) {
           <div class="card-body p-4 text-center">
               <h3 class="mb-3">Registre</h3>
 
-              <div class="form-outline mb-3">
-                  <label class="form-label" for="typeUsuari">Usuari</label>
-                  <input type="text" id="typeUsuari" class="form-control form-control-sm bg-dark text-white" required />
-              </div>
+              <form method="POST" action="login_controlador.php">
+                  <input type="hidden" name="accion" value="registro"> <!-- Añadir acción para el controlador -->
+                  
+                  <div class="form-outline mb-3">
+                      <label class="form-label" for="typeUsuari">Usuari</label>
+                      <input type="text" id="typeUsuari" name="usuari_reg" class="form-control form-control-sm bg-dark text-white" required />
+                  </div>
 
-              <div class="form-outline mb-3">
-                  <label class="form-label" for="typeEmail">Correu</label>
-                  <input type="email" id="typeEmail" class="form-control form-control-sm bg-dark text-white" required />
-              </div>
+                  <div class="form-outline mb-3">
+                      <label class="form-label" for="typeEmail">Correu</label>
+                      <input type="email" id="typeEmail" name="email" class="form-control form-control-sm bg-dark text-white" required />
+                  </div>
 
-              <div class="form-outline mb-3">
-                  <label class="form-label" for="typePassword">Password</label>
-                  <input type="password" id="typePassword" class="form-control form-control-sm bg-dark text-white" required />
-              </div>
+                  <div class="form-outline mb-3">
+                      <label class="form-label" for="typePassword">Password</label>
+                      <input type="password" id="typePassword" name="pass" class="form-control form-control-sm bg-dark text-white" required />
+                  </div>
 
-              <div class="form-outline mb-3">
-                  <label class="form-label" for="typeConfirmPassword">Confirmar Password</label>
-                  <input type="password" id="typeConfirmPassword" class="form-control form-control-sm bg-dark text-white" required />
-              </div>
+                  <div class="form-outline mb-3">
+                      <label class="form-label" for="typeConfirmPassword">Confirmar Password</label>
+                      <input type="password" id="typeConfirmPassword" name="confirm_pass" class="form-control form-control-sm bg-dark text-white" required />
+                  </div>
 
-              <button class="btn btn-primary btn-sm btn-block mt-3" type="submit">Registrarse</button>
+                  <button class="btn btn-primary btn-sm btn-block mt-3" type="submit">Registrarse</button>
 
-              <p class="mt-3">Ja tens compte? 
-                <a href="../Vistes/login_nou.php" class="text-decoration-none text-primary">Login</a>
-              </p>
+                  <p class="mt-3">Ja tens compte? 
+                    <a href="../Vistes/login_nou.php" class="text-decoration-none text-primary">Login</a>
+                  </p>
 
-              <hr class="my-3 text-white">
+                  <hr class="my-3 text-white">
 
-              <button class="btn btn-sm btn-block" style="background-color: #dd4b39; color: white;" type="submit">
-                  <img src="../Imatges/googleG.svg.png" alt="Google" style="width: 20px; height: 20px; margin-right: 10px; vertical-align: middle;">
-                  Sign in with Google
-              </button>
+                  <button class="btn btn-sm btn-block" style="background-color: #dd4b39; color: white;" type="button">
+                      <img src="../Imatges/googleG.svg.png" alt="Google" style="width: 20px; height: 20px; margin-right: 10px; vertical-align: middle;">
+                      Sign in with Google
+                  </button>
 
-              <button class="btn btn-sm btn-block mb-2" style="background-color: #3b5998; color: white;" type="submit">
-                  <img src="../Imatges/facebookF.svg.png" alt="Facebook" style="width: 20px; height: 20px; margin-right: 10px; vertical-align: middle;">
-                  Sign in with Facebook
-              </button>
+                  <button class="btn btn-sm btn-block mb-2" style="background-color: #3b5998; color: white;" type="button">
+                      <img src="../Imatges/facebookF.svg.png" alt="Facebook" style="width: 20px; height: 20px; margin-right: 10px; vertical-align: middle;">
+                      Sign in with Facebook
+                  </button>
+              </form>
           </div>
         </div>
       </div>
